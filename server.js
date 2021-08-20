@@ -9,7 +9,7 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
-
+/*
 const knex = require('knex')({
     client: 'pg',
     connection: {
@@ -17,6 +17,14 @@ const knex = require('knex')({
         user : 'kokinarimoto',
         password : '',
         database : 'face_detect_db'
+    }
+});
+*/
+const knex = require('knex')({
+    client: 'pg',
+    connection: {
+        connectionString : process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
