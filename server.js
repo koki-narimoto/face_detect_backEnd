@@ -40,6 +40,9 @@ app.use(cors());
 //})
 // can do the same for any variable PORT can be renamed as anything
 // 
+
+app.get('/', (req, res)=> { res.send(knex.users) })
+
 app.post('/signin', (req,res) => {signin.handleSignIn(req, res, knex, bcryptNodejs)})
 
 app.post('/register', (req,res) => {register.handleRegister(req, res, knex, bcryptNodejs)})
