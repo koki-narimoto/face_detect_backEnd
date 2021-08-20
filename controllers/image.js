@@ -13,7 +13,6 @@ const handleClarifaiCall = (req, res) => {
         .catch(err => res.status(400).json('clarifai not working'))
 }
 
-
 const getImage = (req, res, knex) => {
     const {id } = req.body;
     knex('users').where('id' , '=', id)

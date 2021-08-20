@@ -21,17 +21,18 @@ const handleRegister = (req, res, knex, bcryptNodejs) => {
                 joined: new Date()
             }).then(user => {
                 res.json(user[0]);
-            }).catch(err => {
+            })// .catch(err => {
                 // bad to send info about the database to user
                 // res.status(400).json(err);
-                res.status(400).json('unable to register');
-            })
+               // res.status(400).json('unable to register');
+            //})
         })
         .then(trx.commit)
         .catch(trx.rollback)
     })
+    .catch(err => res.status(400).json('unable to register'))
 }
 
 module.exports = {
-    handleRegister
+    handleRegister : handleRegister
 };

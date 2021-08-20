@@ -20,10 +20,10 @@ const knex = require('knex')({
     }
 });
 
-console.log(knex.select('*').from('users'));
-knex.select('*').from('users').then(data => {
-    console.log(data);
-});
+// console.log(knex.select('*').from('users'));
+// knex.select('*').from('users').then(data => {
+//     console.log(data);
+// });
   
 
 const app = express();

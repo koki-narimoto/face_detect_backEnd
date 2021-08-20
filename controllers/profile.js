@@ -12,6 +12,7 @@ const getId = (req, res, knex) =>{
             res.status(400).json('error user not found');
         }
     })
+    .catch(err => res.status(400).json('error getting user'))
 }
 
 module.exports = {
